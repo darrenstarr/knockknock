@@ -7,8 +7,9 @@
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
 
-const {onRequest} = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
+const {onCall, HttpsError} = require("firebase-functions/v2/https");
+
 
 // Create and deploy your first functions
 // https://firebase.google.com/docs/functions/get-started
@@ -29,7 +30,7 @@ exports.addnumbers = onCall((request) => {
     const firstNumber = request.data.firstNumber;
     const secondNumber = request.data.secondNumber;
     // [END v2readAddData]
-  
+
     // [START v2addHttpsError]
     // Checking that attributes are present and are numbers.
     if (!Number.isFinite(firstNumber) || !Number.isFinite(secondNumber)) {
@@ -39,7 +40,7 @@ exports.addnumbers = onCall((request) => {
               "must both be numbers.");
     }
     // [END v2addHttpsError]
-  
+
     // [START v2returnAddData]
     // returning result.
     return {
