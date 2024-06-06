@@ -3,8 +3,6 @@ import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWith
 
 import { getFunctions } from 'firebase/functions';
 
-const functions = getFunctions(app);
-
 const firebaseConfig = {
     apiKey: "AIzaSyD2MP2fmKlykBOg_UrDVUQ9qv66GsCXTxI",
     authDomain: "knockknock-8e41d.firebaseapp.com",
@@ -24,6 +22,7 @@ const loginButton = document.querySelector('.login-button');
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const functions = getFunctions(app);
 
 const auth = getAuth();
 
