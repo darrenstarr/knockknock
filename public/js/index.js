@@ -1,8 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
-import { initializeApp } from 'firebase/app';
- import { getFunctions } from 'firebase/functions';
+import { getFunctions } from 'firebase/functions';
 
 const functions = getFunctions(app);
 
